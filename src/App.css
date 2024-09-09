@@ -1,0 +1,169 @@
+html{
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column; 
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #84fab0, #79c3fa);
+  background-size: 400% 400%; 
+  animation: gradientBackground 15s ease infinite; 
+  padding: 0; 
+  
+}
+
+@keyframes gradientBackground {
+  0% {
+    background-position: 0% 50%;
+    background-color: #a5fac4;
+  }
+  25% {
+    background-position: 50% 50%;
+    background-color: #acdbff;
+  }
+  50% {
+    background-position: 100% 50%;
+    background-color: #b4d0ff;
+  }
+  75% {
+    background-position: 50% 50%;
+    background-color: #a7e1da;
+  }
+  100% {
+    background-position: 0% 50%;
+    background-color: #a7f4c3;
+  }
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 275px;
+  height: 100%;
+  padding: 0;
+  flex-grow: 1; 
+}
+
+/* TOP */
+.top-container {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 255, 0.2); /* fixes the color clipping */
+  backdrop-filter: blur(10px); 
+  padding: 20px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.top-day-name {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333333;
+}
+
+.top-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.top-content .weather-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.top-temperature {
+  font-size: 30px;
+  font-weight: bold;
+  color: #0b7aad;
+  margin-bottom: 5px;
+}
+
+.top-description {
+  font-size: 16px;
+  color: #0b7aad;
+}
+
+/* BOTTOM */
+.bottom-container {
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.2); 
+  backdrop-filter: blur(10px); 
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.day-cell {
+  background-color: rgba(255, 255, 255, 0.3); 
+  padding: 15px;
+  border-radius: 10px;
+  width: 80px;
+  text-align: center;
+  margin-right: 10px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.day-cell img.weather-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 5px;
+}
+
+.day-cell:hover {
+  background-color: rgba(255, 255, 255, 0.5); 
+}
+
+.day-name {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #0b7aad;
+}
+
+.temperature {
+  font-size: 18px;
+  font-weight: bold;
+  color: #0b7aad;
+}
+
+.bottom-container::-webkit-scrollbar {
+  display: none;
+}
+
+.bottom-container {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+
+@keyframes colorChangeOverlay {
+  0% {
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.5); 
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0.2); 
+  }
+}
+
+.top-container.animate {
+  animation: colorChangeOverlay 1s ease;
+}
